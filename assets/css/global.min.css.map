@@ -1,1 +1,1 @@
-{"version":3,"sources":["data:;charset=utf-8,body%20%7B%0D%0A%09color:%20%23333;%0D%0A%09background-color:%20%23fff;%0D%0A%7D"],"names":[],"mappings":"AAAA,KACC,MAAA,KACA,iBAAA","file":"global.min.css","sourcesContent":["body {\r\n\tcolor: #333;\r\n\tbackground-color: #fff;\r\n}"]}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"global.min.css","sourcesContent":[]}

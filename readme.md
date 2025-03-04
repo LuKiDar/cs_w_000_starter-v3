@@ -4,7 +4,7 @@ Welcome to **CStheme**, a WordPress starter theme powered by **Gulp**! This READ
 
 ---
 
-## Prerequisites
+## Requirements
 
 Before we get started, make sure you have a couple of things set up:
 
