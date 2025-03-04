@@ -79,6 +79,12 @@ To run all the tasks (like compiling Sass, minifying JS, and refreshing your bro
 npm start
 ```
 
+or
+
+```bash
+gulp
+```
+
 It will:
 
 - Compile your Sass into CSS
