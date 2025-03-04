@@ -141,9 +141,9 @@ If something goes wrong (and we all know that happens sometimes):
 3. **Check for Errors in the Terminal:**\
    The terminal is your friend. It’ll usually tell you exactly what went wrong.
 
-4. **Pray to ChatGPT and Google Search for further instructions**
+4. **Pray to ChatGPT and Google Search for further instructions** 😭🙏🏻
 
 ---
 
-Enjoy the process, and happy coding! 🚀
+Enjoy the process, and happy coding! 🚀\
 Yours truly Dariia
