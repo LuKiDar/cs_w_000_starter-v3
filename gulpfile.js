@@ -1,4 +1,3 @@
-// Import dependencies
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
@@ -16,7 +15,7 @@ const paths = {
 		dest: 'assets/css' // Output folder for compiled CSS
 	},
 	scripts: {
-		src: 'assets/js/**/*.js', // Your JS files
+		src: 'assets/js/src/**/*.js', // Your JS files
 		dest: 'assets/js/dist' // Output folder for minified JS
 	}
 };
