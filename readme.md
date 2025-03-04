@@ -79,14 +79,9 @@ To run all the tasks (like compiling Sass, minifying JS, and refreshing your bro
 npm start
 ```
 
-or
-
-```bash
-gulp
-```
-
 It will:
 
+- Automatically run the `gulp` command
 - Compile your Sass into CSS
 - Minify and concatenate your JS
 - Refresh the browser when files change
@@ -107,8 +102,7 @@ You can run individual tasks too if you just want to focus on one thing.
   gulp minifyJS
   ```
 
-- **Watch Files (for auto-reloading):**\
-  To start watching files and get live reloads, use:
+- **Watch Files (for auto-reloading):**
 
   ```bash
   gulp watch
@@ -147,10 +141,9 @@ If something goes wrong (and we all know that happens sometimes):
 3. **Check for Errors in the Terminal:**\
    The terminal is your friend. It’ll usually tell you exactly what went wrong.
 
+4. **Pray to ChatGPT and Google Search for further instructions**
+
 ---
 
-## Conclusion
-
-That’s it! You’re now ready to rock with **CStheme** and Gulp. Sass is compiled, JS is minified, and your browser stays up-to-date without lifting a finger. Feel free to tweak the tasks, add your own, or just get to work on making something awesome.
-
 Enjoy the process, and happy coding! 🚀
+Yours truly Dariia
