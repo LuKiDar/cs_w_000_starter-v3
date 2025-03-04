@@ -32,6 +32,14 @@ Once installed, check it with:
 gulp --version
 ```
 
+You should see the following output:
+
+```bash
+CLI version: 3.0.0
+Local version: 5.0.0
+```
+
+
 ### 3. **WordPress Environment**
 
 Make sure you have a local WordPress environment set up (using [Local](https://localwp.com/), XAMPP, or something similar). We need a place to run the theme and see the magic happen.
