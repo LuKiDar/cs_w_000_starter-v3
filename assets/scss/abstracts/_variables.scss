@@ -1,0 +1,77 @@
+/**
+ * Variables
+ */
+
+/* --- Grid and breakpoints --- */
+$layout_columns:		12;
+$layout_padding:		var(--wp--custom--layout--padding);
+$layout_blockGap:		var(--wp--custom--layout--block-gap);
+$layout_content:		var(--wp--custom--layout--content);
+$layout_wide:			var(--wp--custom--layout--wide);
+$layout_breakout:		calc((var(--wp--custom--layout--wide) - var(--wp--custom--layout--content)) / 2);
+
+$breakpoints: (
+	xs: 551,
+	sm: 782,
+	md: 1025,
+	lg: 1201,
+	xl: 1366
+);
+
+
+/* --- Colors --- */
+$black:				var(--wp--preset--color--black);
+$gray_900:			var(--wp--preset--color--gray-900);
+$gray_500:			var(--wp--preset--color--gray-500);
+$gray_100:			var(--wp--preset--color--gray-100);
+$white:				var(--wp--preset--color--white);
+
+// Functional colors
+$focus:				var(--wp--custom--functional-color--focus);
+$success:			var(--wp--custom--functional-color--success);
+$error:				var(--wp--custom--functional-color--error);
+
+
+/* --- Typography --- */
+$fontFamily_primary:	var(--wp--preset--font-family--primary);
+$fontFamily_secondary:	var(--wp--preset--font-family--secondary);
+
+$fontSize_mega:			var(--wp--preset--font-size--mega);
+$fontSize_giant:		var(--wp--preset--font-size--giant);
+$fontSize_huge:			var(--wp--preset--font-size--huge);
+$fontSize_xxlarge:		var(--wp--preset--font-size--xx-large);
+$fontSize_xlarge:		var(--wp--preset--font-size--x-large);
+$fontSize_large:		var(--wp--preset--font-size--large);
+$fontSize_medium:		var(--wp--preset--font-size--medium);
+$fontSize_small:		var(--wp--preset--font-size--small);
+$fontSize_xsmall:		var(--wp--preset--font-size--x-small);
+
+$borderRadius_medium:	var(--wp--custom--border-radius--medium);
+$borderRadius_small:	var(--wp--custom--border-radius--small);
+
+
+/* --- Content --- */
+:root {
+	--header--height: #{remc(80)};
+	--header--logo-width: #{remc(275)};
+	--default-page--padding-bottom: #{remc(100)};
+	--default-page--padding-top: #{remc(80)};
+
+	@media screen and ( max-width: 1024px ){
+		// --wp--preset--font-size--xx-large: 24px;
+		// --wp--preset--font-size--x-large: 22px;
+		// --wp--preset--font-size--large: 18px;
+		// --wp--preset--font-size--medium: 16px;
+
+		// --header--height: #{remc(70)};
+		// --header--logo-width: #{remc(200)};
+		// --default-page--padding-bottom: #{remc(60)};
+		// --default-page--padding-top: #{remc(40)};
+	}
+}
+$header_height: var(--header--height);
+$header_logoWidth: var(--header--logo-width);
+$defaultPage_paddingBottom: var(--default-page--padding-bottom);
+$defaultPage_paddingTop: var(--default-page--padding-top);
+
+$header_menuTransition: .4s;

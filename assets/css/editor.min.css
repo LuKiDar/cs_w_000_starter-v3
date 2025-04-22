@@ -1,2 +1,2 @@
-.mce-content-body{--wp--preset--color--black:#000000;--wp--preset--color--gray-900:#333333;--wp--preset--color--gray-500:#B0B0B0;--wp--preset--color--gray-100:#F5F5F5;--wp--preset--color--white:#FFFFFF}
+:root{--header--height:remc(80);--header--logo-width:remc(275);--default-page--padding-bottom:remc(100);--default-page--padding-top:remc(80)}.mce-content-body{--wp--preset--color--black:#000000;--wp--preset--color--gray-900:#333333;--wp--preset--color--gray-500:#B0B0B0;--wp--preset--color--gray-100:#F5F5F5;--wp--preset--color--white:#FFFFFF}
 /*# sourceMappingURL=editor.min.css.map */

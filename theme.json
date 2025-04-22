@@ -63,9 +63,6 @@
 				"small": "0.625rem",
 				"medium": "1.25rem"
 			},
-			"border-width": {
-				"default": "1px"
-			},
 			"box-shadow": {
 				"default": "0px 2px 8px rgba(0, 0, 0, 0.15)"
 			},
@@ -132,7 +129,12 @@
 				{
 					"fontFamily": "Arial, sans-serif",
 					"name": "Arial",
-					"slug": "body"
+					"slug": "primary"
+				},
+				{
+					"fontFamily": "Georgia, serif",
+					"name": "Georgia",
+					"slug": "secondary"
 				},
 				{
 					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
@@ -146,22 +148,22 @@
 				}
 			],
 			"fontSizes": [
-				{"fluid": false,	"name": "XS",					"size": "0.875rem",	"slug": "x-small"},
-				{"fluid": false,	"name": "S / Base",				"size": "1rem",		"slug": "small"},
-				{"fluid": false,	"name": "M",					"size": "1.125rem",	"slug": "medium"},
-				{"fluid": false,	"name": "L / Heading 6",		"size": "1.5rem",	"slug": "large"},
-				{"fluid": false,	"name": "XL / Heading 5",		"size": "1.875rem",	"slug": "x-large"},
-				{"fluid": false,	"name": "XXL / Heading 4",		"size": "2.5rem",	"slug": "xx-large"},
-				{"fluid": false,	"name": "Huge / Heading 3",		"size": "3.125rem",	"slug": "huge"},
-				{"fluid": false,	"name": "Giant / Heading 2",	"size": "3.75rem",	"slug": "giant"},
-				{"fluid": false,	"name": "Mega / Heading 1",		"size": "5rem",		"slug": "mega"}
+				{"fluid": false,	"name": "Heading 1",	"size": "5rem",		"slug": "mega"},
+				{"fluid": false,	"name": "Heading 2",	"size": "3.75rem",	"slug": "giant"},
+				{"fluid": false,	"name": "Heading 3",	"size": "3.125rem",	"slug": "huge"},
+				{"fluid": false,	"name": "Heading 4",	"size": "2.5rem",	"slug": "xx-large"},
+				{"fluid": false,	"name": "Heading 5",	"size": "1.875rem",	"slug": "x-large"},
+				{"fluid": false,	"name": "Heading 6",	"size": "1.5rem",	"slug": "large"},
+				{"fluid": false,	"name": "Body large",	"size": "1.125rem",	"slug": "medium"},
+				{"fluid": false,	"name": "Body regular",	"size": "1rem",		"slug": "small"},
+				{"fluid": false,	"name": "Footnote",		"size": "0.875rem",	"slug": "x-small"}
 			],
 			"fontStyle": true,
 			"fontWeight": true,
-			"letterSpacing": false,
-			"lineHeight": false,
+			"letterSpacing": true,
+			"lineHeight": true,
 			"textAlign": true,
-			"textColumns": false,
+			"textColumns": true,
 			"textDecoration": true,
 			"textTransform": true,
 			"writingMode": false
@@ -260,6 +262,14 @@
 				},
 				"typography": {
 					"fontWeight": "700"
+				}
+			},
+			"core/post-content": {
+				"spacing": {
+					"padding": {
+						"left": "var(--wp--style--root--padding-left)",
+						"right": "var(--wp--style--root--padding-right)"
+					}
 				}
 			},
 			"core/post-title": {
