@@ -2,7 +2,7 @@
  * Mixins
  */
  
-/*** Media Queries ***/
+// Media Queries
 @mixin mediaMinWidth( $minWidth ){
 	@if type-of($minWidth)==string {
 		$minWidth: map-get($breakpoints, $minWidth);
@@ -35,7 +35,7 @@
 }
 
 
-/*** Get styles ***/
+// Get styles
 @mixin getStyles( $styles, $screen:'' ){
 	@each $name, $value in $styles {
 		#{$name}: #{$value};
@@ -57,11 +57,54 @@
 }
 
 
-/*** Placeholder ***/
+// Placeholder
 @mixin placeholder {
 	&.placeholder { @content; }
 	&:-ms-input-placeholder { @content; }
 	&:-moz-placeholder { @content; }
 	&::-moz-placeholder { @content; }
 	&::-webkit-input-placeholder { @content; }
+}
+
+
+// Block Cover: creates a block that covers the full width/height of parent div
+ @mixin blockCover(){
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+
+// Icon Mask: creates a mask for an icon
+// Usage: @include iconMask($icons, after, $black, 20px);
+@mixin iconMask( $icons, $position: both, $color: currentColor, $size: 1rem ){
+	$selector: if ( $position==before, '::before',
+			   if ( $position== after, '::after',
+				'::before, ::after') );
+
+	#{$selector} {
+		background: $color;
+		content: '';
+		display: inline-block;
+		height: $size;
+		mask-position: 50% 50%;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: $size;
+		z-index: 2;
+	}
+
+	@each $icon in $icons {
+		.has-icon-#{$icon} {
+			mask-image: url('../../../assets/images/icons/icon-#{$icon}.svg');
+		}
+	}
 }
