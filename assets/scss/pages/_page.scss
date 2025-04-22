@@ -1,0 +1,7 @@
+/**
+ * Default page
+ */
+ 
+a.icon-test {
+	@include iconMask( 'test', after, #000, 20px );
+}

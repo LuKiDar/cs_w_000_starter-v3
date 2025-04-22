@@ -10,6 +10,8 @@ get_header(); ?>
 		<article>
 			<h1><?php the_title(); ?></h1>
 			
+			<a class="icon-test" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
 			<div><?php the_content(); ?></div>
 		</article>
 	<?php endwhile; endif; ?>

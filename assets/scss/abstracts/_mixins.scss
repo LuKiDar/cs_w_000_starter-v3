@@ -87,7 +87,7 @@
 			   if ( $position== after, '::after',
 				'::before, ::after') );
 
-	#{$selector} {
+	&[class^="has-icon-"]#{$selector} {
 		background: $color;
 		content: '';
 		display: inline-block;
@@ -103,7 +103,7 @@
 	}
 
 	@each $icon in $icons {
-		.has-icon-#{$icon} {
+		&.has-icon-#{$icon}#{$selector} {
 			mask-image: url('../../../assets/images/icons/icon-#{$icon}.svg');
 		}
 	}
