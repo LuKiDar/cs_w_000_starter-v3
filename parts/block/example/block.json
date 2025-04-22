@@ -1,0 +1,34 @@
+{
+	"name": "cs/example",
+	"title": "Example",
+	"description": "",
+	"category": "cs-blocks",
+	"icon": "block-default",
+	"style": "block-example",
+	"script": "block-example",
+	"editorStyle": "",
+	"apiVersion": 2,
+	"keywords": [],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "render.php",
+		"postTypes": ["post"]
+	},
+	"attributes": {},
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"alignContent": false,
+		"color": {
+			"text": false,
+			"background": false,
+			"link": false
+		},
+		"alignText": false,
+		"fullHeight": false
+	},
+	"styles": [
+		{ "name": "default", "label": "Default", "isDefault": true },
+		{ "name": "variation", "label": "Variation" }
+	]
+}
