@@ -27,7 +27,7 @@ add_action('init', function() {
 });
 
 
-/*** Register custom post types ***/
+/* --- Register custom post types --- */
 function cs__register_post_types( $types=array() ){
 	if ( empty($types) ) return;
 
@@ -72,7 +72,7 @@ function cs__register_post_types( $types=array() ){
 }
 
 
-/*** Register custom taxonomies ***/
+/* --- Register custom taxonomies --- */
 function cs__register_taxonomies( $taxonomies=array() ){
 	if ( empty($taxonomies) ) return;
 

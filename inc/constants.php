@@ -3,7 +3,7 @@
  * Constants
  */
 
-/*** Post type args ***/
+/* --- Post type args --- */
 define('DEFAULT_CPT_LABELS', array(
 	'add_new'				=> __('Add new', CSWP),
 	'add_new_item'			=> __('Add new post', CSWP),
@@ -49,7 +49,7 @@ define('DEFAULT_CPT_ARGS', array(
 ));
 
 
-/*** Taxonomy args  ***/
+/* --- Taxonomy args  --- */
 define('DEFAULT_TAXONOMY_LABELS', array(
 	'name'					=> _x('Categories', 'General name for the taxonomy, usually plural', CSWP),
 	'singular_name'			=> _x('Category', 'Name for one object of this taxonomy', CSWP),

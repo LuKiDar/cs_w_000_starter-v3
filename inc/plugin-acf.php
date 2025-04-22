@@ -3,11 +3,11 @@
  * Plugin: Advanced custom fields
  */
 
-/*** ACF: disable CPT and taxonomy functionality ***/
+/* --- ACF: disable CPT and taxonomy functionality --- */
 add_filter('acf/settings/enable_post_types', '__return_false');
 
 
-/*** ACF: add Menu Level rule ***/
+/* --- ACF: add Menu Level rule --- */
 function cs__acf_location_rules_types( $choices ){
 	$choices['Menu']['menu_level'] = 'Menu Level';
 	
@@ -33,7 +33,7 @@ function cs__acf_location_rule_match_level( $match, $rule, $options, $field_grou
 add_filter('acf/location/rule_match/menu_level', 'cs__acf_location_rule_match_level', 10, 4);
 
 
-/*** ACF: register Options page ***/
+/* --- ACF: register Options page --- */
 if ( function_exists('acf_add_options_page') ):
 	acf_add_options_page(
 		array(
@@ -54,7 +54,7 @@ if ( function_exists('acf_add_options_page') ):
 endif;
 
 
-/*** ACF: Google API ***/
+/* --- ACF: Google API --- */
 // function cs__acf_google_map_api($api){
 //     $api['key'] = get_field('google_maps_api_key', 'options');
 //     return $api;

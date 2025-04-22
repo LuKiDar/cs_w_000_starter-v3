@@ -3,7 +3,7 @@
  * Helper functions
  */
 
-/*** Get template page ID ***/
+/* --- Get template page ID --- */
 function cs__get_template_page_ID( $template, $index=0 ){
 	$pages = get_posts(array(
 		'post_type' =>'page',
@@ -17,7 +17,7 @@ function cs__get_template_page_ID( $template, $index=0 ){
 }
 
 
-/*** Parse content in search of a block ***/
+/* --- Parse content in search of a block --- */
 function cs__has_block( $post_content, $block_name='' ){
 	$blocks = parse_blocks($post_content);
 
@@ -39,7 +39,7 @@ function cs__has_block( $post_content, $block_name='' ){
 }
 
 
-/*** Generate URL handle from text line ***/
+/* --- Generate URL handle from text line --- */
 function cs__generate_url_handle( $text ){
 	$handle = strtolower($text);
 	$handle = preg_replace('/[^\w\s]/u', '', $handle);

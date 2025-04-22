@@ -1,9 +1,12 @@
 <?php
 /**
  * TinyMCE editor
+ * 
+ * TO DO:
+ * - add TinyMCE shortcodes
  */
 
-/*** TinyMCE: add style selector ***/
+/* --- TinyMCE: add style selector --- */
 function cs__mce_add_more_buttons( $buttons ){
 	$buttons[] = 'styleselect';
 	return $buttons;
@@ -58,7 +61,7 @@ function cs__mce_before_init( $settings ){
 add_filter('tiny_mce_before_init', 'cs__mce_before_init');
 
 
-/*** TinyMCE: remove the Color Picker plugin ***/
+/* --- TinyMCE: remove the Color Picker plugin --- */
 function cs__mce_remove_custom_colors( $plugins ){
 	foreach ( $plugins as $key=>$plugin_name ){
 		if ( $plugin_name==='colorpicker' ){

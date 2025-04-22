@@ -10,6 +10,7 @@ include 'inc/constants.php';
 
 // Theme setup
 function cs__theme_setup() {
+    add_theme_support('editor-styles');
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
 	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
@@ -26,7 +27,7 @@ function cs__theme_setup() {
 add_action('after_setup_theme', 'cs__theme_setup');
 
 
-/*** Includes ***/
+/* --- Includes --- */
 // Theme
 require_once 'inc/enqueue.php';
 // require_once 'inc/helper-functions.php';

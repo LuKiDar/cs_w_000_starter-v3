@@ -3,14 +3,14 @@
  * Gutenberg
  */
 
-/*** Register core block variations ***/
+/* --- Register core block variations --- */
 function cs__register_block_styles(){
 	register_block_style('core/button', ['name' => 'custom',	'label' => __('Custom', CSWP)]);
 }
 // add_action('init', 'cs__register_block_styles');
 
 
-/*** Register block categories ***/
+/* --- Register block categories --- */
 function cs__register_block_categories( $categories, $post ){
 	return array_merge(
 		array(
@@ -25,7 +25,7 @@ function cs__register_block_categories( $categories, $post ){
 add_filter('block_categories_all', 'cs__register_block_categories', 10, 2);
 
 
-/*** Get Blocks ***/
+/* --- Get Blocks --- */
 function cs__get_blocks(){
 	$blocks = scandir(get_stylesheet_directory() .'/parts/block/');
 	$blocks = array_values(array_diff($blocks, array('..', '.', '.DS_Store', '_base-block')) );
@@ -33,7 +33,7 @@ function cs__get_blocks(){
 }
 
 
-/*** Load Blocks ***/
+/* --- Load Blocks --- */
 function cs__load_blocks(){
 	$blocks = cs__get_blocks();
 
@@ -53,7 +53,7 @@ function cs__load_blocks(){
 add_action('init', 'cs__load_blocks', 5);
 
 
-/*** Load ACF field groups for blocks ***/
+/* --- Load ACF field groups for blocks --- */
 function cs__load_acf_field_group( $paths ){
 	$blocks = cs__get_blocks();
 
