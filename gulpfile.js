@@ -13,7 +13,7 @@ const path = require('path');
 // Paths
 const paths = {
 	styles: {
-		src: 'assets/sass/**/*.scss', // Your Sass files
+		src: 'assets/scss/**/*.scss', // Your Sass files
 		dest: 'assets/css' // Output folder for compiled CSS
 	},
 	scripts: {
@@ -24,14 +24,16 @@ const paths = {
 
 // Dynamic Block Styles Path using Glob
 function getBlockStylesPaths() {
-  return glob.sync('parts/blocks/**/*.scss'); // Find all style.scss in block folders
+  return glob.sync('parts/block/**/*.scss'); // Find all style.scss in block folders
 }
 
 // Compile general Sass
 function compileSass(done) {
   	return gulp.src(paths.styles.src)
 		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({
+			"silenceDeprecations": ["mixed-decls", "color-functions", "global-builtin", "import"]
+		}).on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(cleanCSS())
 		.pipe(rename({ suffix: '.min' }))
@@ -46,7 +48,9 @@ function compileBlockSass() {
 
 	return gulp.src(blockStyles)
 		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({
+			"silenceDeprecations": ["mixed-decls", "color-functions", "global-builtin", "import"]
+		}).on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(cleanCSS())
 		.pipe(rename({ suffix: '.min' }))
@@ -79,7 +83,7 @@ function watchFiles(done) {
 	});
 
 	gulp.watch(paths.styles.src, compileSass);
-	gulp.watch('parts/blocks/**/*.scss', compileBlockSass);
+	gulp.watch('parts/block/**/*.scss', compileBlockSass);
 	gulp.watch(paths.scripts.src, minifyJS);
 	gulp.watch('**/*.php').on('change', browserSync.reload);
 	done();

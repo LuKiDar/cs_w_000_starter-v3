@@ -16,6 +16,12 @@ function cs__theme_setup() {
 	register_nav_menus(array(
 		'primary' => __('Primary Menu', 'cstheme'),
 	));
+	
+	load_theme_textdomain(CSWP, get_template_directory() .'/languages'); // Make theme available for translation
+	add_filter('should_load_separate_core_block_assets', '__return_true'); // Disable loading core block inline styles
+	remove_action('enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets'); // Remove the block directory
+	remove_theme_support('core-block-patterns'); // Remove core block patterns
+	define('CORE_UPGRADE_SKIP_NEW_BUNDLED', true); // Don't install bundled themes when WordPress updates
 }
 add_action('after_setup_theme', 'cs__theme_setup');
 
