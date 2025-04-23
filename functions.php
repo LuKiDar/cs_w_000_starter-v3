@@ -15,7 +15,7 @@ function cs__theme_setup() {
 	add_theme_support('post-thumbnails');
 	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 	register_nav_menus(array(
-		'primary' => __('Primary Menu', 'cstheme'),
+		'primary' => __('Primary Menu', CSWP),
 	));
 	
 	load_theme_textdomain(CSWP, get_template_directory() .'/languages'); // Make theme available for translation
@@ -30,8 +30,8 @@ add_action('after_setup_theme', 'cs__theme_setup');
 /* --- Includes --- */
 // Theme
 require_once 'inc/enqueue.php';
+require_once 'inc/wordpress-cleanup.php';
 // require_once 'inc/helper-functions.php';
-// require_once 'inc/wordpress-cleanup.php';
 
 // Functionality
 require_once 'inc/gutenberg.php';

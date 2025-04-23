@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<main>
+<main class="container">
 	<h1>Search Results for "<?= get_search_query(); ?>"</h1>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
