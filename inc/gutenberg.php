@@ -5,9 +5,9 @@
 
 /* --- Register core block variations --- */
 function cs__register_block_styles(){
-	register_block_style('core/button', ['name' => 'custom',	'label' => __('Custom', CSWP)]);
+	register_block_style('core/button', ['name' => 'outlined', 'label' => __('Outlined', CSWP)]);
 }
-// add_action('init', 'cs__register_block_styles');
+add_action('init', 'cs__register_block_styles');
 
 
 /* --- Register block categories --- */

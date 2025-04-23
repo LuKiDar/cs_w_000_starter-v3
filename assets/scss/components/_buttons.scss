@@ -1,0 +1,11 @@
+/**
+ * Buttons
+ */
+
+.button {
+	@extend .button-base;
+	@extend .button-default;
+}
+.button.is-outlined {
+	@extend .button-outlined;
+}

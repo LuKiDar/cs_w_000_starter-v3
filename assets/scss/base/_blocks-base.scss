@@ -1,0 +1,19 @@
+/**
+ * Gutenberg blocks: base styles
+ * Included in main.css and editor.css
+ */
+
+// Core / Button
+.wp-block-button {
+	.wp-block-button__link {
+		@extend .button-base;
+		@extend .button-default;
+	}
+
+	&.is-style-outlined {
+		.wp-block-button__link {
+			@extend .button-base;
+			@extend .button-outlined;
+		}
+	}
+}

@@ -46,4 +46,4 @@ require_once 'inc/gutenberg.php';
 // require_once 'inc/widgets.php';
 
 // Plugin support
-// require_once 'inc/acf.php';
+require_once 'inc/plugin-acf.php';

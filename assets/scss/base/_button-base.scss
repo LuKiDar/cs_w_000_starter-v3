@@ -1,0 +1,51 @@
+/**
+ * Buttons base
+ */
+
+.button-base {
+	background: transparent;
+	border: 2px solid transparent;
+	border-radius: 0;
+	box-shadow: none;
+	display: inline-block;
+	cursor: pointer;
+	font-size: $fontSize_small;
+	font-weight: 600;
+	letter-spacing: 0;
+	line-height: $lineHeight_base;
+	padding: 0.375rem 1.125rem;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.2s;
+
+	&:hover,
+	&:focus-visible {
+		text-decoration: underline;
+	}
+	&:focus-visible {
+		outline: 2px solid $black;
+		outline-offset: 2px;
+	}
+}
+.button-default {
+	background: $primary;
+	color: $white;
+
+	&:hover,
+	&:focus-visible {
+		background: $black;
+		color: $white;
+	}
+}
+.button-outlined {
+	background: transparent;
+	border-color: currentColor;
+	color: $primary;
+
+	&:hover,
+	&:focus-visible {
+		background: $black;
+		border-color: $black;
+		color: $white;
+	}
+}
