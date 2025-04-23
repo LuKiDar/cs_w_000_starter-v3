@@ -5,7 +5,7 @@
 .button-base {
 	background: transparent;
 	border: 2px solid transparent;
-	border-radius: 0;
+	border-radius: $borderRadius_small;
 	box-shadow: none;
 	display: inline-block;
 	cursor: pointer;
