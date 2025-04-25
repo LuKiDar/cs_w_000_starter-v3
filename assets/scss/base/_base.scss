@@ -19,11 +19,19 @@ html {
 	}
 }
 body {
-	display: flex;
-	flex-flow: column nowrap;
-	min-height: 100vh;
 	overflow-x: hidden;
 	word-wrap: break-word;
+
+	&.is-menu-active,
+	&.is-modal-active {
+		overflow: hidden;
+	}
+}
+.site-container {
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 100vh; // Fallback for browsers that don't support dvh
+	min-height: 100dvh;
 
 	.screen-reader-shortcut {
 		position: absolute;
@@ -33,7 +41,7 @@ body {
 		&:focus {
 			background: #f0f0f1;
 			box-shadow: 0 0 2px 2px rgb(0 0 0 / 60%);
-			color: $graphite;
+			color: #000000;
 			display: block;
 			font-size: 14px;
 			font-weight: 600;
@@ -49,21 +57,20 @@ body {
 		}
 	}
 
-	&.admin-bar {
-		min-height: calc(100vh - 32px);
+	body.admin-bar & {
+		min-height: calc(100vh - 32px); // Fallback for browsers that don't support dvh
+		min-height: calc(100dvh - 32px);
 
 		@include mediaMaxWidth( 782 ){
-			min-height: calc(100vh - 46px);
+			min-height: calc(100vh - 46px); // Fallback for browsers that don't support dvh
+			min-height: calc(100dvh - 46px);
 		}
 		@include mediaMaxWidth( 600 ){
-			min-height: 100vh;
+			min-height: 100vh; // Fallback for browsers that don't support dvh
+			min-height: 100dvh;
 		}
 	}
-	&.is-header-fixed {
+	body.is-header-fixed & {
 		padding-top: $header_height;
-	}
-	&.is-menu-active,
-	&.is-modal-active {
-		overflow: hidden;
 	}
 }

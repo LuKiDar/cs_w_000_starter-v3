@@ -1,0 +1,138 @@
+/**
+ * Navigation
+ */
+
+/* --- Primary menu --- */
+.primary-menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include mediaMinWidth( md ){
+		flex-flow: row wrap;
+		gap: 20px 30px;
+		justify-content: flex-end;
+		height: inherit;
+	}
+	@include mediaMaxWidth( md ){
+		flex-flow: column nowrap;
+		gap: 10px 20px;
+		margin: 0 auto;
+		max-width: remc(250);
+		padding: remc(35) 0;
+	}
+
+	> .menu-item {
+		position: relative;
+
+		@include mediaMinWidth( md ){
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			height: inherit;
+
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+
+		a {
+			color: $black;
+			display: inline-block;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: $primary;
+			}
+		}
+		> .sub-menu {
+			list-style: none;
+			margin: 0;
+
+			@include mediaMinWidth( md ){
+				background: $white;
+				border-top: 1px solid $black;
+				display: none;
+				left: 50%;
+				padding: $layout_padding;
+				position: absolute;
+				top: 100%;
+				transform: translateX(-50%);
+				transition: opacity .2s;
+				width: calc(#{$layout_padding} * 2 + #{remc(200)});
+				z-index: -1;
+			}
+
+			a {
+				margin: 0 0 remc(5);
+			}
+			.sub-menu {
+				margin: 0 0 remc(10);
+
+				.sub-menu {
+					display: none;
+				}
+			}
+		}
+
+		&.menu-item-has-children {
+			&:hover,
+			&:focus-within {
+				> .sub-menu {
+					@include mediaMinWidth( md ){
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.menu-item.current-menu-item {
+		> a {
+			font-weight: 700;
+		}
+	}
+}
+
+
+/*** Footer menu ***/
+.footer-menu {
+	display: flex;
+	flex-flow: row wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	> .menu-item {
+		padding: 0 rem(20);
+		position: relative;
+
+		a {
+			color: $white;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: $primary;
+			}
+		}
+		> .sub-menu {
+			display: none !important;
+		}
+
+		&.current-menu-item {
+			font-weight: 700;
+		}
+
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}

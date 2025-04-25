@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<main class="container">
+<div class="container">
 	<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 		<article>
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -18,6 +18,6 @@ get_header(); ?>
 		<p>No content available.</p>
 
 	<?php endif; ?>
-</main>
+</div>
 
 <?php get_footer(); ?>

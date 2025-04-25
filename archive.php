@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<main class="container">
+<div class="container">
 	<h1><?php the_archive_title(); ?></h1>
 
 	<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
@@ -15,6 +15,6 @@ get_header(); ?>
 			<p><?php the_excerpt(); ?></p>
 		</article>
 	<?php endwhile; endif; ?>
-</main>
+</div>
 
 <?php get_footer(); ?>

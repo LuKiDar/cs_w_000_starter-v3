@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<main class="container">
+<div class="container">
 	<h1>Search Results for "<?= get_search_query(); ?>"</h1>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -20,6 +20,6 @@ get_header(); ?>
 		<p>No results found.</p>
 
 	<?php endif; ?>
-</main>
+</div>
 
 <?php get_footer(); ?>
