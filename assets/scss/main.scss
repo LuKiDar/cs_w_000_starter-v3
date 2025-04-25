@@ -16,11 +16,13 @@
 // Base
 @import 'base/grid';
 @import 'base/base';
+@import 'base/button-base';
 @import 'base/typography';
-@import 'base/blocks-core';
+@import 'base/blocks-base';
+@import 'base/blocks-styles';
 
 // Components
-@import 'components/button';
+@import 'components/buttons';
 // @import 'components/accordion';
 // @import 'components/breadcrumbs';
 // @import 'components/feed-categories';
