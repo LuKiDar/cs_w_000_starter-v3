@@ -18,14 +18,23 @@
 	@include mediaMaxWidth( md ){
 		flex-flow: column nowrap;
 		gap: 10px 20px;
-		margin: 0 auto;
-		max-width: remc(250);
-		padding: remc(35) 0;
 	}
 
-	> .menu-item {
-		position: relative;
+	a {
+		color: $black;
+		display: inline-block;
+		text-decoration: none;
 
+		&:hover,
+		&:focus-visible {
+			color: $primary;
+			text-decoration: underline;
+		}
+	}
+	.menu-item {
+		position: relative;
+	}
+	> .menu-item {
 		@include mediaMinWidth( md ){
 			display: flex;
 			flex-flow: column nowrap;
@@ -33,17 +42,6 @@
 			height: inherit;
 		}
 
-		a {
-			color: $black;
-			display: inline-block;
-			text-decoration: none;
-
-			&:hover,
-			&:focus-visible {
-				color: $primary;
-				text-decoration: underline;
-			}
-		}
 		> .sub-menu {
 			list-style: none;
 			margin: 0;

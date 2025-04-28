@@ -76,6 +76,8 @@ $copyright = get_option('cs_footer_copyright'); ?>
 			</footer>
 		</div><!-- .site-container -->
 
+		<div id="site-overlay" class="site-overlay"></div>
+
 		<?php wp_footer(); ?>
 	</body>
 </html>
