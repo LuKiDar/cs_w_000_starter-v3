@@ -1,5 +1,5 @@
 {
-	"name": "cstheme",
+	"name": "millburn",
 	"version": "3.0.0",
 	"description": "A WordPress starter theme using Gulp",
 	"author": "Crazy Seeker",
@@ -9,8 +9,11 @@
 		"start": "gulp"
 	},
 	"devDependencies": {
+		"@rollup/plugin-commonjs": "^28.0.3",
+		"@rollup/plugin-node-resolve": "^16.0.1",
+		"@rollup/plugin-terser": "^0.4.4",
 		"browser-sync": "^3.0.3",
-    	"glob": "^11.0.1",
+		"glob": "^11.0.1",
 		"gulp": "^5.0.0",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-clean-css": "^4.3.0",
@@ -19,6 +22,7 @@
 		"gulp-sass": "^6.0.0",
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
+		"rollup": "^4.40.1",
 		"sass": "^1.85.1"
 	}
 }

@@ -60,6 +60,7 @@ add_filter('get_custom_logo', function( $html ){
 // Theme
 require_once 'inc/enqueue.php';
 require_once 'inc/wordpress-cleanup.php';
+require_once 'inc/customize.php';
 require_once 'inc/helper-functions.php';
 
 // Functionality

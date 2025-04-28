@@ -22,7 +22,7 @@
 		z-index: 1;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			#{$c}__image {
 				opacity: 0.85;
 				transform: scale(1.05);

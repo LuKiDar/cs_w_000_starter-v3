@@ -2,7 +2,11 @@
 /**
  * Header Template
  */
-?>
+
+$button_text = get_option('cs_header_button_text');
+$button_url = get_option('cs_header_button_url');
+$button_new_tab = get_option('cs_header_button_new_tab'); ?>
+
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,11 +20,11 @@
 	<!-- Page -->
 	<div id="page" class="site-container">
 		<a class="screen-reader-shortcut" href="#menu-primary-menu" aria-label="Skip to primary menu">Skip to primary menu</a>
-		<a class="screen-reader-shortcut" href="#main-content" aria-label="Skip to main content">Skip to main content</a>
-		<a class="screen-reader-shortcut" href="#colophon" aria-label="Skip to footer content">Skip to footer content</a>
+		<a class="screen-reader-shortcut" href="#main" aria-label="Skip to main content">Skip to main content</a>
+		<a class="screen-reader-shortcut" href="#footer" aria-label="Skip to footer content">Skip to footer content</a>
 
 		<header id="masthead" class="site-header container" role="banner">
-			<div class="site-header__inner">
+			<div class="site-header__inner alignwide">
 				<div class="site-logo">
 					<?php if ( has_custom_logo() ){ ?>
 						<?php the_custom_logo(); ?>
@@ -30,29 +34,36 @@
 				</div>
 
 				<?php if ( has_nav_menu('primary') ){ ?>
-					<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e('Main Menu', CSWP); ?>">
+					<nav class="site-header__navigation" role="navigation" aria-label="<?= __('Main Menu', CSWP); ?>">
 						<?php wp_nav_menu(array(
 							'theme_location'	=> 'primary',
-							'menu_class'		=> 'primary-menu menu--desktop',
-							'container'			=> false
+							'menu_class'		=> 'primary-menu',
+							'container'			=> false,
+							'walker'			=> new cs__primary_menu_walker()
 						)); ?>
+
+						<?php if ( $button_text!='' && $button_url!='' ){ ?>
+							<div class="site-header__button-wrapper">
+								<a class="site-header__button button is-outlined" href="<?= $button_url; ?>" <?= ( $button_new_tab ) ? 'target="_blank"' : ''; ?>><?= $button_text; ?></a>
+							</div>	
+						<?php } ?>
 					</nav>
 				<?php } ?>
 
 				<button class="nav-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle Navigation', CSWP); ?>">
-					<span class="nav-toggle__icon" aria-hidden="true"></span>
+					<span class="nav-toggle__bar" aria-hidden="true"></span>
 					<span class="screen-reader-text"><?php esc_html_e('Menu', CSWP); ?></span>
 				</button>
-
 			</div>
 
 			<nav id="mobile-menu" class="mobile-navigation" role="navigation" aria-label="<?php esc_attr_e('Mobile Menu', CSWP); ?>" hidden>
 				<?php wp_nav_menu(array(
-					'theme_location' => 'primary',
-					'menu_class'     => 'menu menu--mobile',
-					'container'      => false
+					'theme_location'	=> 'primary',
+					'menu_class'		=> 'primary-menu',
+					'container'			=> false,
+					'walker'			=> new cs__primary_menu_walker()
 				)); ?>
 			</nav>
 		</header>
 
-		<main id="main-content" class="site-main">
+		<main id="main" class="site-main">

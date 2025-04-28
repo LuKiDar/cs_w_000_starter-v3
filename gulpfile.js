@@ -9,6 +9,11 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const glob = require('glob');
 const path = require('path');
+const rollup = require('rollup');
+const nodeResolve = require('@rollup/plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
+const terser = require('@rollup/plugin-terser');
+
 
 // Paths
 const paths = {
@@ -63,16 +68,36 @@ function compileBlockSass() {
 }
 
 // Minify and Concatenate JS
-function minifyJS(done) {
-	return gulp.src(paths.scripts.src)
-		.pipe(sourcemaps.init())
-		.pipe(concat('main.js'))
-		.pipe(uglify())
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.scripts.dest))
-		.pipe(browserSync.stream()); // Inject JS into the browser
+// function minifyJS(done) {
+// 	return gulp.src(paths.scripts.src)
+// 		.pipe(sourcemaps.init())
+// 		.pipe(concat('main.js'))
+// 		.pipe(uglify())
+// 		.pipe(rename({ suffix: '.min' }))
+// 		.pipe(sourcemaps.write('.'))
+// 		.pipe(gulp.dest(paths.scripts.dest))
+// 		.pipe(browserSync.stream()); // Inject JS into the browser
+// }
+
+async function bundleJS() {
+	const bundle = await rollup.rollup({
+		input: 'assets/js/src/main.js',
+		plugins: [
+			nodeResolve(),
+			commonjs(),
+			terser
+		]
+	});
+
+	await bundle.write({
+		file: 'assets/js/dist/main.min.js',
+		format: 'iife',
+		sourcemap: true
+	});
+
+	browserSync.reload(); // reload manually after build
 }
+
 
 // Watch files for changes
 function watchFiles(done) {
@@ -84,7 +109,7 @@ function watchFiles(done) {
 
 	gulp.watch(paths.styles.src, compileSass);
 	gulp.watch('parts/block/**/*.scss', compileBlockSass);
-	gulp.watch(paths.scripts.src, minifyJS);
+	gulp.watch(paths.scripts.src, bundleJS);
 	gulp.watch('**/*.php').on('change', browserSync.reload);
 	done();
 }
@@ -92,6 +117,7 @@ function watchFiles(done) {
 // Export tasks
 exports.compileSass = compileSass;
 exports.compileBlockSass = compileBlockSass;
-exports.minifyJS = minifyJS;
+// exports.minifyJS = minifyJS;
+exports.bundleJS = bundleJS;
 exports.watch = watchFiles;
-exports.default = gulp.series(compileSass, minifyJS, watchFiles);
+exports.default = gulp.series(compileSass, bundleJS, watchFiles);
